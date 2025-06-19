@@ -1,14 +1,12 @@
 A .NET wrapper that loads `frida-gadget.dll` into a target executable by launching it in suspended mode, injecting the DLL, and resuming the process—ensuring the gadget runs before the application logic starts.
 
----
-
 ## 🔧 Setup
 
 1. Open the file `DotNet.DllInjector/Program.cs`.
 2. Edit the `OriginalExeFileName` constant so it matches your original executable:
 
 ```csharp
-// CHANGE THIS! It must match your original executable name.
+// CHANGE THIS!
 private const string OriginalExeFileName = "app_original.exe";
 ```
 
@@ -25,11 +23,6 @@ dotnet publish -c Debug -r win-x64 --self-contained true
 * `-c`: `Release`, `Debug`
 * `-r`: Target architecture (`win-x64` or `win-x86`)
 * `--self-contained true`: Bundles the .NET runtime into the executable
-
-> The resulting files will be located in:
->
-> * `bin/Release/net9.0/win-x64/publish/`
-> * `bin/Debug/net9.0/win-x64/publish/`
 
 ## 📖 Usage
 
